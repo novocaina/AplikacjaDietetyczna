@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".bmiActivity" />
+        <activity android:name=".cpmActivity" />
+        <activity android:name=".DietInfoActivity" />
+        <activity android:name=".DietPlanActivity" />
+        <activity android:name=".cateringActivity" />
+        <activity android:name=".FoodListActivity"></activity>
     </application>
 
 </manifest>
