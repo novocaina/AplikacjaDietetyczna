@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AplikacjaDietetyczna</string>
+    <string name="title_activity_catering">Map</string>
 </resources>
