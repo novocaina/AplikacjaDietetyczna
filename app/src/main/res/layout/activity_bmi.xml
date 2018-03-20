@@ -1,13 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F4C3"
+    android:orientation="vertical"
     tools:context="com.example.alicja.aplikacjadietetyczna.bmiActivity">
 <TextView
-    android:text="Oblicz BMI"
+    android:text="Podaj wzrost w centymetrach"
+    android:textSize="20dp"
+    android:layout_marginTop="30dp"
+    android:textColor="@android:color/black"
     android:gravity="center_horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
-</android.support.constraint.ConstraintLayout>
+    android:layout_height="wrap_content"
+    android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/height_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:ems="6"
+        android:textColor="@android:color/background_dark"
+        android:textAlignment="center"
+        android:inputType="number|numberDecimal"
+        />
+    <TextView
+        android:text="Podaj wagę w kilogramach"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/black"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/weight_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:ems="6"
+        android:textColor="@android:color/background_dark"
+        android:textAlignment="center"
+        android:inputType="number|numberDecimal"
+        />
+    <Button
+        android:id="@+id/bmi_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="OBLICZ BMI"
+        android:ems="8"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:backgroundTint="#FFB74D"/>
+    <TextView
+        android:id="@+id/your_bmi_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="Twoje BMI"
+        android:textColor="#37474F"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/bmi_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+    <TextView
+        android:id="@+id/bmi_info_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+</LinearLayout>

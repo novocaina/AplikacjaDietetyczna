@@ -42,8 +42,8 @@
                 <ImageView
                     android:src="@drawable/icons8_scale_40"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
+                    android:layout_width="60dp"
+                    android:layout_height="60dp" />
                 <TextView
                     android:text="Oblicz BMI"
                     android:textColor="@android:color/black"
