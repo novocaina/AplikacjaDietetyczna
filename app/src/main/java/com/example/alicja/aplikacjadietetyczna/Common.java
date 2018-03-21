@@ -1,5 +1,6 @@
 package com.example.alicja.aplikacjadietetyczna;
 
+import com.example.alicja.aplikacjadietetyczna.Model.Results;
 import com.example.alicja.aplikacjadietetyczna.Remote.IGoogleAPIService;
 import com.example.alicja.aplikacjadietetyczna.Remote.RetrofitClient;
 
@@ -8,6 +9,7 @@ import com.example.alicja.aplikacjadietetyczna.Remote.RetrofitClient;
  */
 
 public class Common {
+    public static  Results currentResult;
     private static final String GOOGLE_API_URL="https://maps.googleapis.com/";
     public static IGoogleAPIService getGoogleAPIService()
     {
