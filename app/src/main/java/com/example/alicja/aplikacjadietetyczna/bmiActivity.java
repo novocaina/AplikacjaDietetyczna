@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +29,15 @@ public class bmiActivity extends AppCompatActivity {
       String weightStr=weight_txt.getText().toString();
         String heightStr=height_txt.getText().toString();
 
-        if(weightStr != null && heightStr !=null)
+        if(weightStr.isEmpty() && heightStr.isEmpty())
+        {
+            Toast.makeText(bmiActivity.this,"Podaj wszystkie dane!",Toast.LENGTH_LONG).show();
+        }
+        else if(Float.parseFloat(weightStr) <=0  || Float.parseFloat(weightStr)<=0)
+        {
+            Toast.makeText(bmiActivity.this,"Wartość musi być większa od 0",Toast.LENGTH_LONG).show();
+        }
+        else
         {
             float weight = Float.parseFloat(weightStr);
             float height = Float.parseFloat(heightStr);
@@ -38,14 +47,6 @@ public class bmiActivity extends AppCompatActivity {
             bmi_txt.setText(bmiStr);
             String bmi_text=BMI_text(bmi);
             bmi_info_txt.setText(bmi_text);
-        }
-        else if(Float.parseFloat(weightStr) <0  || Float.parseFloat(weightStr)<0)
-        {
-           //dodac ostrzezenie
-        }
-        else
-        {
-            //dodac kolejne ostrzezenie
         }
     }
 
