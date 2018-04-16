@@ -45,7 +45,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp" />
                 <TextView
-                    android:text="Oblicz BMI"
+                    android:text="@string/calc_bmi"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -77,7 +77,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"/>
                 <TextView
-                    android:text="Oblicz CPM"
+                    android:text="@string/calc_cpm"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -141,7 +141,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp" />
                 <TextView
-                    android:text="Plan diety"
+                    android:text="@string/diet_details"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -173,7 +173,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"/>
                 <TextView
-                    android:text="Lista zakupów"
+                    android:text="@string/shop_list"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -206,7 +206,7 @@
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/icons8_deliver_food_48" />
                 <TextView
-                    android:text="Catering"
+                    android:text="@string/catering"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
                     android:textStyle="bold"

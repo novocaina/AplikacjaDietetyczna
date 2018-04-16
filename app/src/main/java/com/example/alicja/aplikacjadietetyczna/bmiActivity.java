@@ -31,11 +31,11 @@ public class bmiActivity extends AppCompatActivity {
 
         if(weightStr.isEmpty() && heightStr.isEmpty())
         {
-            Toast.makeText(bmiActivity.this,"Podaj wszystkie dane!",Toast.LENGTH_LONG).show();
+            Toast.makeText(bmiActivity.this,this.getString(R.string.warning_data),Toast.LENGTH_LONG).show();
         }
         else if(Float.parseFloat(weightStr) <=0  || Float.parseFloat(weightStr)<=0)
         {
-            Toast.makeText(bmiActivity.this,"Wartość musi być większa od 0",Toast.LENGTH_LONG).show();
+            Toast.makeText(bmiActivity.this,this.getString(R.string.value_str),Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -63,18 +63,18 @@ public class bmiActivity extends AppCompatActivity {
     }
     public String BMI_text(float bmi){
         if(bmi<16)
-        {return  "wygłodzenie";}
+        {return  this.getString(R.string.starvation);}
         else if(bmi>= 16 && bmi <=16.99)
-        {return  "wychudzenie";}
+        {return  this.getString(R.string.emaciaton);}
         else if(bmi>= 17 && bmi <=18.49)
-        {return  "niedowaga";}
+        {return  this.getString(R.string.low_weight);}
         else if(bmi>= 18.5 && bmi <=24.99)
-        {return  "waga prawidłowa";}
+        {return  this.getString(R.string.normal_weight);}
         else if(bmi>= 25 && bmi <=29.99)
-        {return  "I stopień otyłości";}
+        {return  this.getString(R.string.obeseI);}
         else if(bmi>= 30 && bmi <=39.99)
-        {return  "II stopień otyłości";}
+        {return  this.getString(R.string.obeseII);}
         else
-        {return  "III stopień otyłości";}
+        {return  this.getString(R.string.obeseIII);}
     }
 }

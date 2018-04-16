@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context="com.example.alicja.aplikacjadietetyczna.bmiActivity">
 <TextView
-    android:text="Podaj wzrost w centymetrach"
+    android:text="@string/give_height"
     android:textSize="20dp"
     android:layout_marginTop="30dp"
     android:textColor="@android:color/black"
@@ -29,7 +29,7 @@
         android:inputType="number|numberDecimal"
         />
     <TextView
-        android:text="Podaj wagę w kilogramach"
+        android:text="@string/give_weight"
         android:textSize="20dp"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
-        android:text="OBLICZ BMI"
+        android:text="@string/calc_bmi"
         android:ems="8"
         android:textStyle="bold"
         android:textSize="25dp"

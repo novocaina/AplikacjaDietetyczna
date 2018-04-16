@@ -55,7 +55,7 @@
                 android:textStyle="bold" />
             <Button
                 android:id="@+id/btn_show_map"
-                android:text="Pokaż na mapie"
+                android:text="@string/show_map"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

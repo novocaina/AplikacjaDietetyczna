@@ -1,4 +1,34 @@
 <resources>
     <string name="app_name">AplikacjaDietetyczna</string>
     <string name="title_activity_catering">Map</string>
+    <string name="show_map">Pokaż na mapie</string>
+    <string name="give_height">Podaj wzrost w centymetrach</string>
+    <string name="give_weight">Podaj wagę w kilogramach</string>
+    <string name="calc_bmi">Oblicz BMI</string>
+    <string name="give_age">Podaj wiek</string>
+    <string name="select_sex">Wybierz płeć</string>
+    <string name="select_activity">Wybierz aktywność</string>
+    <string name="calc_cpm">Oblicz CPM</string>
+    <string name="day_cal">Dzienne spożycie kalorii wynosi</string>
+    <string name="diet_details">Plan diety</string>
+    <string name="shop_list">Lista zakupów</string>
+    <string name="catering">Catering</string>
+    <string name="warning_data">Podaj wszystkie dane!</string>
+    <string name="value_str">Wartość musi byc większa od 0!</string>
+    <string name="starvation">wygłodzenie</string>
+    <string name="emaciaton">wychudzenie</string>
+    <string name="low_weight">niedowaga</string>
+    <string name="normal_weight">waga prawidłowa</string>
+    <string name="obeseI">I stopień otyłości"</string>
+    <string name="obeseII">II stopień otyłości"</string>
+    <string name="obeseIII">III stopień otyłości"</string>
+    <string name="woman">Kobieta</string>
+    <string name="man">Mężczyzna</string>
+    <string name="activity_1">Nieaktywny tryb życia (brak ćwiczeń)</string>
+    <string name="activity_2">Mało aktywny tryb życia (lekkie ćwiczenia)</string>
+    <string name="activity_3">Umiarkowanie aktywny tryb życia (ćwiczenia 3–5 razy w tygodniu)</string>
+    <string name="activity_4">Aktywny tryb życia (ćwiczenia 6-7 razy w tygodniu)</string>
+    <string name="activity_5">Bardzo aktywny tryb życia (codzienne ćwiczenia i praca fizyczna)</string>
+
+
 </resources>
