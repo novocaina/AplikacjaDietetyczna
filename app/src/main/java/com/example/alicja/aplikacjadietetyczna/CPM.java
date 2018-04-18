@@ -1,4 +1,4 @@
-package com.example.alicja.aplikacjadietetyczna.Model;
+package com.example.alicja.aplikacjadietetyczna;
 
 /**
  * Created by Alicja on 2018-04-18.

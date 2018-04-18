@@ -10,8 +10,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.alicja.aplikacjadietetyczna.Model.CPM;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

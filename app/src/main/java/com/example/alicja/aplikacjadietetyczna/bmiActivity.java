@@ -29,7 +29,7 @@ public class bmiActivity extends AppCompatActivity {
       String weightStr=weight_txt.getText().toString();
         String heightStr=height_txt.getText().toString();
 
-        if(weightStr.isEmpty() && heightStr.isEmpty())
+        if(weightStr.isEmpty() || heightStr.isEmpty())
         {
             Toast.makeText(bmiActivity.this,this.getString(R.string.warning_data),Toast.LENGTH_LONG).show();
         }

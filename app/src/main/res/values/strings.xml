@@ -30,5 +30,10 @@
     <string name="activity_4">Aktywny tryb życia (ćwiczenia 6-7 razy w tygodniu)</string>
     <string name="activity_5">Bardzo aktywny tryb życia (codzienne ćwiczenia i praca fizyczna)</string>
     <string name="select_target">Wybierz cel diety</string>
+    <string name="reduction">Redukcja</string>
+    <string name="cons_weight">Utrzymanie wagi</string>
+    <string name="mass">Masa</string>
+    <string name="save_data">Zapisz dane</string>
+    <string name="select_number">Wybierz liczbę posiłków</string>
 
 </resources>
