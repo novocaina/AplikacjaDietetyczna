@@ -29,6 +29,6 @@
     <string name="activity_3">Umiarkowanie aktywny tryb życia (ćwiczenia 3–5 razy w tygodniu)</string>
     <string name="activity_4">Aktywny tryb życia (ćwiczenia 6-7 razy w tygodniu)</string>
     <string name="activity_5">Bardzo aktywny tryb życia (codzienne ćwiczenia i praca fizyczna)</string>
-
+    <string name="select_target">Wybierz cel diety</string>
 
 </resources>

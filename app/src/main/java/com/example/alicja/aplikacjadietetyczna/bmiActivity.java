@@ -41,7 +41,8 @@ public class bmiActivity extends AppCompatActivity {
         {
             float weight = Float.parseFloat(weightStr);
             float height = Float.parseFloat(heightStr);
-            float bmi=BMI_Count(weight,height);
+            BMI newBMI=new BMI();
+            float bmi=newBMI.BMI_Count(weight,height);
             your_bmi_txt.setVisibility(View.VISIBLE);
             String bmiStr = String.format("%.2f", bmi);
             bmi_txt.setText(bmiStr);
@@ -57,10 +58,7 @@ public class bmiActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    public float BMI_Count(float weight, float height){
-        float BMI=weight/((height/100)*(height/100));
-        return BMI;
-    }
+
     public String BMI_text(float bmi){
         if(bmi<16)
         {return  this.getString(R.string.starvation);}

@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.alicja.aplikacjadietetyczna.Model.CPM;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,7 +32,7 @@ public class cpmActivity extends AppCompatActivity {
     @BindView(R.id.activity_list)
     Spinner activity_list;
     char sex;
-    double pal,CPM;
+    double pal;
 
     @OnClick(R.id.cpm_btn)
     void OnClick() {
@@ -51,7 +53,8 @@ public class cpmActivity extends AppCompatActivity {
             float height = Float.parseFloat(heightStr);
             int age = Integer.parseInt(ageStr);
             your_cpm_txt.setVisibility(View.VISIBLE);
-            double cpm=Count_CPM(weight,height,age,sex,pal);
+            CPM newCPM=new CPM();
+            double cpm=newCPM.Count_CPM(weight,height,age,sex,pal);
             String cpmStr = String.format("%.2f", cpm);
             cpm_txt.setText(cpmStr);
         }
@@ -126,20 +129,5 @@ public class cpmActivity extends AppCompatActivity {
 
         });
     }
-public double Count_CPM(float weight, float height, int age, char sex,double pal){
-        if(sex=='k')
-        {
-            double PPM = 665.09+(9.56*weight)+(1.85*height)-(4.67*age);
-            CPM=PPM*pal;
-
-        }
-            else
-            {
-                double PPM = 66.47 + (13.75*weight) + (5*height)-(6.75*age);
-                 CPM=PPM*pal;
-
-            }
-            return CPM;
-        }
 
 }
