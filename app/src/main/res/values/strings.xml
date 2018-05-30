@@ -35,5 +35,30 @@
     <string name="mass">Masa</string>
     <string name="save_data">Zapisz dane</string>
     <string name="select_number">Wybierz liczbę posiłków</string>
-
+    <string name="prefer">Preferencje żywieniowe</string>
+    <string name="none">Brak</string>
+    <string name="veget">Wegetariańska</string>
+    <string name="warning_database">Aktualizacja bazy danych nie powiodła się</string>
+    <string name="success">Dane zostały poprawnie zapisane</string>
+    <string name="warning_dietplan">Problem z odczytem danych</string>
+    <string name="food_list">Lista zakupów</string>
+    <string name="food_item">Dodaj do listy</string>
+    <string name="see_list">Zobacz listę</string>
+    <string name="give_name">Wpisz nazwę</string>
+    <string name="give_amount">Wpisz ilość</string>
+    <string name="select_property">Wybierz rodzaj ilości</string>
+    <string name="number">szt.</string>
+    <string name="gram">g</string>
+    <string name="kilogram">kg</string>
+    <string name="litr">l</string>
+    <string name="mililitr">ml</string>
+    <string name="list_error">Nie można zapisać do listy!</string>
+    <string name="list_success">Poprawnie zapisano!</string>
+    <string name="mon">Poniedziałek</string>
+    <string name="tue">Wtorek</string>
+    <string name="wed">Środa</string>
+    <string name="thu">Czwartek</string>
+    <string name="fri">Piątek</string>
+    <string name="sat">Sobota</string>
+    <string name="sun">Niedziela</string>
 </resources>

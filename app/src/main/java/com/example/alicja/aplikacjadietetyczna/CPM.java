@@ -33,11 +33,11 @@ int age;
         this.age = age;
     }
 
-    public char getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(char sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -49,11 +49,11 @@ int age;
         this.pal = pal;
     }
 
-    char sex;
+    String sex;
 double pal;
-    public double Count_CPM(float weight, float height, int age, char sex,double pal){
+    public double Count_CPM(float weight, float height, int age, String sex,double pal){
     double CPM;
-        if(sex=='k')
+        if(sex.equals("k"))
         {
             double PPM = 665.09+(9.56*weight)+(1.85*height)-(4.67*age);
             CPM=PPM*pal;

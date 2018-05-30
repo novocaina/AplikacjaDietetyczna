@@ -29,7 +29,7 @@ public class cpmActivity extends AppCompatActivity {
     Spinner sex_list;
     @BindView(R.id.activity_list)
     Spinner activity_list;
-    char sex;
+    String sex;
     double pal;
 
     @OnClick(R.id.cpm_btn)
@@ -40,32 +40,30 @@ public class cpmActivity extends AppCompatActivity {
 
         if (weightStr.isEmpty() || heightStr.isEmpty() || ageStr.isEmpty()) {
 
-            Toast.makeText(cpmActivity.this,this.getString(R.string.warning_data),Toast.LENGTH_LONG).show();
-        }
-        else if(Float.parseFloat(weightStr) <=0  || Float.parseFloat(weightStr)<=0 || Integer.parseInt(ageStr) <=0)
-                {
-            Toast.makeText(cpmActivity.this,this.getString(R.string.value_str),Toast.LENGTH_LONG).show();
-        }
-        else{
+            Toast.makeText(cpmActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
+        } else if (Float.parseFloat(weightStr) <= 0 || Float.parseFloat(weightStr) <= 0 || Integer.parseInt(ageStr) <= 0) {
+            Toast.makeText(cpmActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
+        } else {
             float weight = Float.parseFloat(weightStr);
             float height = Float.parseFloat(heightStr);
             int age = Integer.parseInt(ageStr);
             your_cpm_txt.setVisibility(View.VISIBLE);
-            CPM newCPM=new CPM();
-            double cpm=newCPM.Count_CPM(weight,height,age,sex,pal);
+            CPM newCPM = new CPM();
+            double cpm = newCPM.Count_CPM(weight, height, age, sex, pal);
             String cpmStr = String.format("%.2f", cpm);
             cpm_txt.setText(cpmStr);
         }
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cpm);
         ButterKnife.bind(this);
-        String[] sex_table = {this.getString(R.string.woman),this.getString(R.string.man)};
-        String[] act_table = {this.getString(R.string.activity_1),this.getString(R.string.activity_2),
-                this.getString(R.string.activity_3),this.getString(R.string.activity_4),this.getString(R.string.activity_5)};
+        String[] sex_table = {this.getString(R.string.woman), this.getString(R.string.man)};
+        String[] act_table = {this.getString(R.string.activity_1), this.getString(R.string.activity_2),
+                this.getString(R.string.activity_3), this.getString(R.string.activity_4), this.getString(R.string.activity_5)};
         ArrayAdapter<String> adapter_sx = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sex_table);
         sex_list.setAdapter(adapter_sx);
         ArrayAdapter<String> adapter_act = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, act_table);
@@ -79,10 +77,10 @@ public class cpmActivity extends AppCompatActivity {
 
                 switch ((int) position) {
                     case 0:
-                        sex = 'k';
+                        sex = "k";
                         break;
                     case 1:
-                        sex = 'm';
+                        sex = "m";
                         break;
 
                 }

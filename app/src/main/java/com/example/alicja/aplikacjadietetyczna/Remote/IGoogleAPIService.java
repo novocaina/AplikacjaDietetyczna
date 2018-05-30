@@ -1,7 +1,5 @@
 package com.example.alicja.aplikacjadietetyczna.Remote;
 
-import android.test.suitebuilder.annotation.LargeTest;
-
 import com.example.alicja.aplikacjadietetyczna.Model.MyPlaces;
 
 import retrofit2.Call;

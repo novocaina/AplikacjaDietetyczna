@@ -1,10 +1,8 @@
 package com.example.alicja.aplikacjadietetyczna;
 
-import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -30,7 +28,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -99,7 +96,7 @@ public class cateringActivity extends FragmentActivity implements OnMapReadyCall
         mService.getNearByPlaces(url)
                 .enqueue(new Callback<MyPlaces>() {
                     @Override
-                    public void onResponse(Call<MyPlaces> call, Response<MyPlaces> response) {
+                    public void onResponse(@NonNull Call<MyPlaces> call, @NonNull Response<MyPlaces> response) {
                         if (response.isSuccessful()) {
                             for (int i = 0; i < response.body().getResults().length; i++) {
                                 MarkerOptions markerOptions = new MarkerOptions();
@@ -131,7 +128,7 @@ public class cateringActivity extends FragmentActivity implements OnMapReadyCall
                     }
 
                     @Override
-                    public void onFailure(Call<MyPlaces> call, Throwable t) {
+                    public void onFailure(@NonNull Call<MyPlaces> call, @NonNull Throwable t) {
 
                     }
                 });

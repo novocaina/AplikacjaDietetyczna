@@ -9,7 +9,7 @@
     tools:context="com.example.alicja.aplikacjadietetyczna.bmiActivity">
 <TextView
     android:text="@string/give_height"
-    android:textSize="20dp"
+    android:textSize="20sp"
     android:layout_marginTop="30dp"
     android:textColor="@android:color/black"
     android:gravity="center_horizontal"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="10dp"
         android:ems="6"
         android:textColor="@android:color/background_dark"
@@ -30,7 +30,7 @@
         />
     <TextView
         android:text="@string/give_weight"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginTop="30dp"
         android:textColor="@android:color/black"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginTop="10dp"
         android:ems="6"
         android:textColor="@android:color/background_dark"
@@ -58,7 +58,7 @@
         android:text="@string/calc_bmi"
         android:ems="8"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:backgroundTint="#FFB74D"/>
     <TextView
         android:id="@+id/your_bmi_txt"
@@ -69,7 +69,7 @@
         android:text="Twoje BMI"
         android:textColor="#37474F"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:visibility="invisible"/>
     <TextView
         android:id="@+id/bmi_txt"
@@ -79,7 +79,7 @@
         android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="30dp"/>
+        android:textSize="30sp"/>
     <TextView
         android:id="@+id/bmi_info_txt"
         android:layout_width="wrap_content"
@@ -88,5 +88,5 @@
         android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 </LinearLayout>

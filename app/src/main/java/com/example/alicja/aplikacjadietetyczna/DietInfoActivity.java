@@ -7,8 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,7 +28,13 @@ public class DietInfoActivity extends AppCompatActivity {
     Spinner activity_list;
     @BindView(R.id.target_list)
     Spinner target_list;
-    char sex,target;
+    @BindView(R.id.num_list)
+    Spinner num_list;
+    @BindView(R.id.pref_list)
+    Spinner pref_list;
+    String sex, target, preference;
+    float weight,height;
+    int age,number;
     double pal;
 
     @OnClick(R.id.save_btn)
@@ -38,38 +45,49 @@ public class DietInfoActivity extends AppCompatActivity {
 
         if (weightStr.isEmpty() || heightStr.isEmpty() || ageStr.isEmpty()) {
 
-            Toast.makeText(DietInfoActivity.this,this.getString(R.string.warning_data),Toast.LENGTH_LONG).show();
-        }
-        else if(Float.parseFloat(weightStr) <=0  || Float.parseFloat(weightStr)<=0 || Integer.parseInt(ageStr) <=0)
-        {
-            Toast.makeText(DietInfoActivity.this,this.getString(R.string.value_str),Toast.LENGTH_LONG).show();
-        }
-        else{
+            Toast.makeText(DietInfoActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
+        } else if (Float.parseFloat(weightStr) <= 0 || Float.parseFloat(weightStr) <= 0 || Integer.parseInt(ageStr) <= 0) {
+            Toast.makeText(DietInfoActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
+        } else {
             float weight = Float.parseFloat(weightStr);
             float height = Float.parseFloat(heightStr);
             int age = Integer.parseInt(ageStr);
-            BMI new_bmi=new BMI();
-            float bmi=new_bmi.BMI_Count(weight,height);
-            CPM newCPM=new CPM();
-            double cpm=newCPM.Count_CPM(weight,height,age,sex,pal);
-
+            BMI new_bmi = new BMI();
+            float bmi = new_bmi.BMI_Count(weight, height);
+            CPM newCPM = new CPM();
+            double cpm = newCPM.Count_CPM(weight, height, age, sex, pal);
+        }
+            try {
+               DietInfoDatabaseHelper db=new DietInfoDatabaseHelper(this);
+               db.insertUser(db,weight,height,age,sex,target,number,preference);
+                Toast.makeText(DietInfoActivity.this, this.getString(R.string.success), Toast.LENGTH_LONG).show();
+        }
+        catch(DatabaseException ex){
+            Toast.makeText(DietInfoActivity.this, this.getString(R.string.warning_database), Toast.LENGTH_LONG).show();
         }
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dietinfo);
         ButterKnife.bind(this);
-        String[] sex_table = {this.getString(R.string.woman),this.getString(R.string.man)};
-        String[] act_table = {this.getString(R.string.activity_1),this.getString(R.string.activity_2),
-                this.getString(R.string.activity_3),this.getString(R.string.activity_4),this.getString(R.string.activity_5)};
-        String[] target_table={this.getString(R.string.reduction),this.getString(R.string.cons_weight),this.getString(R.string.mass)};
+        String[] sex_table = {this.getString(R.string.woman), this.getString(R.string.man)};
+        String[] act_table = {this.getString(R.string.activity_1), this.getString(R.string.activity_2),
+                this.getString(R.string.activity_3), this.getString(R.string.activity_4), this.getString(R.string.activity_5)};
+        String[] target_table = {this.getString(R.string.reduction), this.getString(R.string.cons_weight), this.getString(R.string.mass)};
+        String[] num_table = {"4", "5", "6"};
+        String[] pref_table = {this.getString(R.string.none), this.getString(R.string.veget)};
         ArrayAdapter<String> adapter_sx = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sex_table);
         sex_list.setAdapter(adapter_sx);
         ArrayAdapter<String> adapter_act = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, act_table);
         activity_list.setAdapter(adapter_act);
         ArrayAdapter<String> adapter_trg = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, target_table);
         target_list.setAdapter(adapter_trg);
+        ArrayAdapter<String> adapter_num = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, num_table);
+        num_list.setAdapter(adapter_num);
+        ArrayAdapter<String> adapter_pref = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, pref_table);
+        pref_list.setAdapter(adapter_pref);
 
         sex_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -79,10 +97,10 @@ public class DietInfoActivity extends AppCompatActivity {
 
                 switch ((int) position) {
                     case 0:
-                        sex = 'k';
+                        sex = "k";
                         break;
                     case 1:
-                        sex = 'm';
+                        sex = "m";
                         break;
 
                 }
@@ -134,13 +152,62 @@ public class DietInfoActivity extends AppCompatActivity {
 
                 switch ((int) position) {
                     case 0:
-                        target = 'r';
+                        target = "r";
                         break;
                     case 1:
-                        target = 'u';
+                        target = "u";
                         break;
                     case 2:
-                        target = 'm';
+                        target = "m";
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+        });
+        num_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int id, long position) {
+
+
+                switch ((int) position) {
+                    case 0:
+                        number = 4;
+                        break;
+                    case 1:
+                        number = 5;
+                        break;
+                    case 2:
+                        number = 6;
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+        });
+        pref_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int id, long position) {
+
+
+                switch ((int) position) {
+                    case 0:
+                        preference = "n";
+                        break;
+                    case 1:
+                        preference = "w";
                         break;
 
                 }
