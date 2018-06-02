@@ -19,13 +19,9 @@ public class FoodListView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list_view);
         ButterKnife.bind(this);
-
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-
         recyclerView.setLayoutManager(layoutManager);
-
         ArrayList<FoodShopItem> items = (ArrayList<FoodShopItem>) getIntent().getSerializableExtra("mylist");
-
         FoodShopItemAdapter itemsAdapter=new FoodShopItemAdapter(items);
         recyclerView.setAdapter(itemsAdapter);
 

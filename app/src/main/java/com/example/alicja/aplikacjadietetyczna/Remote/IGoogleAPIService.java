@@ -1,6 +1,7 @@
 package com.example.alicja.aplikacjadietetyczna.Remote;
 
 import com.example.alicja.aplikacjadietetyczna.Model.MyPlaces;
+import com.example.alicja.aplikacjadietetyczna.Model.PlaceDetails;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -15,6 +16,6 @@ public interface IGoogleAPIService {
     Call<MyPlaces> getNearByPlaces(@Url String url);
 
     @GET
-    Call<MyPlaces> getDetailPlace(@Url String url);
+    Call<PlaceDetails> getDetailPlace(@Url String url);
 
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F4C3"
     tools:context="com.example.alicja.aplikacjadietetyczna.ViewPlace">
 
     <LinearLayout
@@ -46,16 +47,16 @@
                 android:text="Open"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/place_phone"
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:max="5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/btn_show_map"
                 android:text="@string/show_map"
+                android:background="#FFB74B"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

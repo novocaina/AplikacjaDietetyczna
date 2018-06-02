@@ -61,4 +61,7 @@
     <string name="fri">Piątek</string>
     <string name="sat">Sobota</string>
     <string name="sun">Niedziela</string>
+    <string name="open">Otwarte</string>
+    <string name="close">Zamknięte</string>
+
 </resources>

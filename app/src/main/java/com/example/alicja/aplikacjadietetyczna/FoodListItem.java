@@ -39,6 +39,7 @@ public class FoodListItem extends AppCompatActivity {
         } catch (Exception ex) {
             Toast.makeText(FoodListItem.this, this.getString(R.string.list_error), Toast.LENGTH_LONG).show();
         }
+
     }
 
     @Override

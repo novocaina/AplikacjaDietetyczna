@@ -97,6 +97,8 @@ public class cateringActivity extends FragmentActivity implements OnMapReadyCall
                 .enqueue(new Callback<MyPlaces>() {
                     @Override
                     public void onResponse(@NonNull Call<MyPlaces> call, @NonNull Response<MyPlaces> response) {
+
+                        currentPlace=response.body();
                         if (response.isSuccessful()) {
                             for (int i = 0; i < response.body().getResults().length; i++) {
                                 MarkerOptions markerOptions = new MarkerOptions();

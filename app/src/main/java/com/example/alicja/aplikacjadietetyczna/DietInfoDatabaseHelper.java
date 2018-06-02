@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Alicja on 2018-05-13.
@@ -46,6 +47,7 @@ public class DietInfoDatabaseHelper extends SQLiteOpenHelper {
         userValues.put("NUMBER", number);
         userValues.put("PREFER", prefer);
         // db.insert("USER",null,userValues);
+
     }
     public User getUser(){
         User user=new User();

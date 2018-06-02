@@ -24,7 +24,7 @@ public class Results {private Photos[] photos;
 
     private String reference;
 
-   // private Opening_hours opening_hours;// zobaczyc czy potrzebne
+   private Opening_hours opening_hours;
 
     private Geometry geometry;
 
@@ -128,7 +128,7 @@ public class Results {private Photos[] photos;
         this.reference = reference;
     }
 
-  /*  public Opening_hours getOpening_hours ()
+  public Opening_hours getOpening_hours ()
     {
         return opening_hours;
     }
@@ -136,7 +136,7 @@ public class Results {private Photos[] photos;
     public void setOpening_hours (Opening_hours opening_hours)
     {
         this.opening_hours = opening_hours;
-    }*/
+    }
     public Geometry getGeometry ()
     {
         return geometry;

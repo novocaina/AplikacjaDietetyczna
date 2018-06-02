@@ -79,8 +79,8 @@ public class DietPlanActivity extends AppCompatActivity {
         );
 
         readAppDatabase();
-     //   DietInfoDatabaseHelper db=new DietInfoDatabaseHelper(this);
-      //  User user=db.getUser();
+       DietInfoDatabaseHelper db=new DietInfoDatabaseHelper(this);
+       User user=db.getUser();
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
