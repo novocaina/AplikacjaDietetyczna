@@ -1,6 +1,7 @@
 package com.example.alicja.aplikacjadietetyczna;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,40 +32,37 @@ public class DietInfoActivity extends AppCompatActivity {
     Spinner target_list;
     @BindView(R.id.pref_list)
     Spinner pref_list;
+
     String sex, target, preference;
-    float weight,height;
+    double weight,height,cpm,pal;
     int age;
-    double pal;
 
     @OnClick(R.id.save_btn)
     void OnClick() {
         String weightStr = weight_txt.getText().toString();
         String heightStr = height_txt.getText().toString();
         String ageStr = age_txt.getText().toString();
-        Context
-        context.deleteDatabase(DATABASE_NAME);
+
         if (weightStr.isEmpty() || heightStr.isEmpty() || ageStr.isEmpty()) {
 
             Toast.makeText(DietInfoActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
-        } else if (Float.parseFloat(weightStr) <= 0 || Float.parseFloat(weightStr) <= 0 || Integer.parseInt(ageStr) <= 0) {
+        } else if (Double.parseDouble(weightStr) <= 0 || Double.parseDouble(weightStr) <= 0 || Integer.parseInt(ageStr) <= 0) {
             Toast.makeText(DietInfoActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
         } else {
-            float weight = Float.parseFloat(weightStr);
-            float height = Float.parseFloat(heightStr);
-            int age = Integer.parseInt(ageStr);
-            BMI new_bmi = new BMI();
-            float bmi = new_bmi.BMI_Count(weight, height);
+            weight = Double.parseDouble(weightStr);
+            height = Double.parseDouble(heightStr);
+            age = Integer.parseInt(ageStr);
             CPM newCPM = new CPM();
-            double cpm = newCPM.Count_CPM(weight, height, age, sex, pal);
+            cpm = (newCPM.Count_CPM(weight, height, age, sex, pal));
         }
-            try {
-               DietInfoDatabaseHelper db=new DietInfoDatabaseHelper(this);
-               db.insertUser(db,weight,height,age,sex,target,preference);
-                Toast.makeText(DietInfoActivity.this, this.getString(R.string.success), Toast.LENGTH_LONG).show();
-        }
-        catch(DatabaseException ex){
-            Toast.makeText(DietInfoActivity.this, this.getString(R.string.warning_database), Toast.LENGTH_LONG).show();
-        }
+
+        SharedPreferences prefs = getSharedPreferences("myPreferences", MODE_PRIVATE);
+        SharedPreferences.Editor prefsEdit = prefs.edit();
+        prefsEdit.putFloat("CPM", (float) cpm);
+        prefsEdit.putString("PREF", preference);
+        prefsEdit.putString("TARGET",target);
+        prefsEdit.apply();
+
     }
 
     @Override
@@ -76,7 +74,6 @@ public class DietInfoActivity extends AppCompatActivity {
         String[] act_table = {this.getString(R.string.activity_1), this.getString(R.string.activity_2),
                 this.getString(R.string.activity_3), this.getString(R.string.activity_4), this.getString(R.string.activity_5)};
         String[] target_table = {this.getString(R.string.reduction), this.getString(R.string.cons_weight), this.getString(R.string.mass)};
-        String[] num_table = {"4", "5", "6"};
         String[] pref_table = {this.getString(R.string.none), this.getString(R.string.veget)};
         ArrayAdapter<String> adapter_sx = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, sex_table);
         sex_list.setAdapter(adapter_sx);

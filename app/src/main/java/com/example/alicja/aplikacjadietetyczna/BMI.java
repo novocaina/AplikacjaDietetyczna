@@ -21,10 +21,10 @@ public class BMI {
         this.height = height;
     }
 
-    float weight;
-    float height;
-    public float BMI_Count(float weight, float height){
-        float BMI=weight/((height/100)*(height/100));
+    double weight;
+    double height;
+    public double BMI_Count(double weight, double height){
+        double BMI=weight/((height/100)*(height/100));
         return BMI;
     }
 }

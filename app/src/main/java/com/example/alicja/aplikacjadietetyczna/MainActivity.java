@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if(finall==0)
                     {
-                        Intent intent=new Intent(MainActivity.this,bmiActivity.class);
+                        Intent intent=new Intent(MainActivity.this,BmiActivity.class);
                         startActivity(intent);
                     }
                     if(finall==1)
                     {
-                        Intent intent=new Intent(MainActivity.this,cpmActivity.class);
+                        Intent intent=new Intent(MainActivity.this,CpmActivity.class);
                         startActivity(intent);
                     }
                     if(finall==2)
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if(finall==5)
                     {
-                        Intent intent=new Intent(MainActivity.this,cateringActivity.class);
+                        Intent intent=new Intent(MainActivity.this,CateringActivity.class);
                         startActivity(intent);
                     }
                 }

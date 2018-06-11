@@ -11,7 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class bmiActivity extends AppCompatActivity {
+public class BmiActivity extends AppCompatActivity {
     @BindView(R.id.weight_txt)
     EditText weight_txt;
     @BindView(R.id.height_txt)
@@ -29,14 +29,14 @@ public class bmiActivity extends AppCompatActivity {
         String heightStr = height_txt.getText().toString();
 
         if (weightStr.isEmpty() || heightStr.isEmpty()) {
-            Toast.makeText(bmiActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
-        } else if (Float.parseFloat(weightStr) <= 0 || Float.parseFloat(weightStr) <= 0) {
-            Toast.makeText(bmiActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
+            Toast.makeText(BmiActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
+        } else if (Double.parseDouble(weightStr) <= 0 || Double.parseDouble(weightStr) <= 0) {
+            Toast.makeText(BmiActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
         } else {
-            float weight = Float.parseFloat(weightStr);
-            float height = Float.parseFloat(heightStr);
+            double weight = Double.parseDouble(weightStr);
+            double height = Double.parseDouble(heightStr);
             BMI newBMI = new BMI();
-            float bmi = newBMI.BMI_Count(weight, height);
+            double bmi = newBMI.BMI_Count(weight, height);
             your_bmi_txt.setVisibility(View.VISIBLE);
             String bmiStr = String.format("%.2f", bmi);
             bmi_txt.setText(bmiStr);
@@ -53,7 +53,7 @@ public class bmiActivity extends AppCompatActivity {
     }
 
 
-    public String BMI_text(float bmi) {
+    public String BMI_text(double bmi) {
         if (bmi < 16) {
             return this.getString(R.string.starvation);
         } else if (bmi >= 16 && bmi <= 16.99) {

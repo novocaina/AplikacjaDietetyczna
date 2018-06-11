@@ -9,7 +9,7 @@ float weight;
 float height;
 int age;
 
-    public float getWeight() {
+    public double getWeight() {
         return weight;
     }
 
@@ -17,7 +17,7 @@ int age;
         this.weight = weight;
     }
 
-    public float getHeight() {
+    public double getHeight() {
         return height;
     }
 
@@ -51,7 +51,7 @@ int age;
 
     String sex;
 double pal;
-    public double Count_CPM(float weight, float height, int age, String sex,double pal){
+    public double Count_CPM(double weight, double height, int age, String sex,double pal){
     double CPM;
         if(sex.equals("k"))
         {

@@ -37,7 +37,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class cateringActivity extends FragmentActivity implements OnMapReadyCallback,
+public class CateringActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
@@ -199,7 +199,7 @@ public class cateringActivity extends FragmentActivity implements OnMapReadyCall
             @Override
             public boolean onMarkerClick(Marker marker) {
                 Common.currentResult=currentPlace.getResults()[Integer.parseInt(marker.getSnippet())];
-                startActivity(new Intent(cateringActivity.this,ViewPlace.class));
+                startActivity(new Intent(CateringActivity.this,ViewPlace.class));
                 return true;
             }
         });

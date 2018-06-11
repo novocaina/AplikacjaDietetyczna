@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="#F0F4C3"
         android:orientation="vertical"
-        tools:context="com.example.alicja.aplikacjadietetyczna.cpmActivity">
+        tools:context="com.example.alicja.aplikacjadietetyczna.CpmActivity">
 
         <TextView
             android:layout_width="match_parent"

@@ -14,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class cpmActivity extends AppCompatActivity {
+public class CpmActivity extends AppCompatActivity {
     @BindView(R.id.weightcpm_txt)
     EditText weightCPM_txt;
     @BindView(R.id.heightcpm_txt)
@@ -40,12 +40,12 @@ public class cpmActivity extends AppCompatActivity {
 
         if (weightStr.isEmpty() || heightStr.isEmpty() || ageStr.isEmpty()) {
 
-            Toast.makeText(cpmActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
-        } else if (Float.parseFloat(weightStr) <= 0 || Float.parseFloat(weightStr) <= 0 || Integer.parseInt(ageStr) <= 0) {
-            Toast.makeText(cpmActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
+            Toast.makeText(CpmActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
+        } else if (Double.parseDouble(weightStr) <= 0 || Double.parseDouble(weightStr) <= 0 || Integer.parseInt(ageStr) <= 0) {
+            Toast.makeText(CpmActivity.this, this.getString(R.string.value_str), Toast.LENGTH_LONG).show();
         } else {
-            float weight = Float.parseFloat(weightStr);
-            float height = Float.parseFloat(heightStr);
+            double weight = Double.parseDouble(weightStr);
+            double height = Double.parseDouble(heightStr);
             int age = Integer.parseInt(ageStr);
             your_cpm_txt.setVisibility(View.VISIBLE);
             CPM newCPM = new CPM();

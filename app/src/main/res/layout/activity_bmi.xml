@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F0F4C3"
     android:orientation="vertical"
-    tools:context="com.example.alicja.aplikacjadietetyczna.bmiActivity">
+    tools:context="com.example.alicja.aplikacjadietetyczna.BmiActivity">
 <TextView
     android:text="@string/give_height"
     android:textSize="20sp"
