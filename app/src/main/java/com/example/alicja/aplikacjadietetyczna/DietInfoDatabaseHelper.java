@@ -27,7 +27,6 @@ public class DietInfoDatabaseHelper extends SQLiteOpenHelper {
                 + "AGE INTEGER,"
                 + "SEX TEXT,"
                 + "GOAL TEXT,"
-                + "NUMBER INTEGER,"
                 + "PREFER TEXT);");
     }
 
@@ -37,14 +36,13 @@ public class DietInfoDatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void insertUser(DietInfoDatabaseHelper db, float weight, float height, int age,
-                           String sex, String goal, int number, String prefer) {
+                           String sex, String goal, String prefer) {
         ContentValues userValues = new ContentValues();
         userValues.put("WEIGHT", weight);
         userValues.put("HEIGHT", height);
         userValues.put("AGE", age);
         userValues.put("SEX", sex);
         userValues.put("GOAL", goal);
-        userValues.put("NUMBER", number);
         userValues.put("PREFER", prefer);
         // db.insert("USER",null,userValues);
 
@@ -52,7 +50,7 @@ public class DietInfoDatabaseHelper extends SQLiteOpenHelper {
     public User getUser(){
         User user=new User();
         SQLiteDatabase db=getReadableDatabase();
-        String[]kolumn={"weight","height","age","sex","goal","number","prefer"};
+        String[]kolumn={"weight","height","age","sex","goal","prefer"};
         Cursor kursor=db.query("USER",kolumn,null,null,null,null,null,null);
         if(kursor!=null){
             kursor.moveToLast();
@@ -61,8 +59,7 @@ public class DietInfoDatabaseHelper extends SQLiteOpenHelper {
             user.setAge(Integer.parseInt(kursor.getString(5)));
             user.setSex(kursor.getString(4));
             user.setGoal(kursor.getString(5));
-            user.setNumber(Integer.parseInt(kursor.getString(6)));
-            user.setPrefer(kursor.getString(7));
+            user.setPrefer(kursor.getString(6));
         }
         return user;
     }

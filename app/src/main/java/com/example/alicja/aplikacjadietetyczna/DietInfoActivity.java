@@ -1,5 +1,6 @@
 package com.example.alicja.aplikacjadietetyczna;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,13 +29,11 @@ public class DietInfoActivity extends AppCompatActivity {
     Spinner activity_list;
     @BindView(R.id.target_list)
     Spinner target_list;
-    @BindView(R.id.num_list)
-    Spinner num_list;
     @BindView(R.id.pref_list)
     Spinner pref_list;
     String sex, target, preference;
     float weight,height;
-    int age,number;
+    int age;
     double pal;
 
     @OnClick(R.id.save_btn)
@@ -42,7 +41,8 @@ public class DietInfoActivity extends AppCompatActivity {
         String weightStr = weight_txt.getText().toString();
         String heightStr = height_txt.getText().toString();
         String ageStr = age_txt.getText().toString();
-
+        Context
+        context.deleteDatabase(DATABASE_NAME);
         if (weightStr.isEmpty() || heightStr.isEmpty() || ageStr.isEmpty()) {
 
             Toast.makeText(DietInfoActivity.this, this.getString(R.string.warning_data), Toast.LENGTH_LONG).show();
@@ -59,7 +59,7 @@ public class DietInfoActivity extends AppCompatActivity {
         }
             try {
                DietInfoDatabaseHelper db=new DietInfoDatabaseHelper(this);
-               db.insertUser(db,weight,height,age,sex,target,number,preference);
+               db.insertUser(db,weight,height,age,sex,target,preference);
                 Toast.makeText(DietInfoActivity.this, this.getString(R.string.success), Toast.LENGTH_LONG).show();
         }
         catch(DatabaseException ex){
@@ -84,8 +84,6 @@ public class DietInfoActivity extends AppCompatActivity {
         activity_list.setAdapter(adapter_act);
         ArrayAdapter<String> adapter_trg = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, target_table);
         target_list.setAdapter(adapter_trg);
-        ArrayAdapter<String> adapter_num = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, num_table);
-        num_list.setAdapter(adapter_num);
         ArrayAdapter<String> adapter_pref = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, pref_table);
         pref_list.setAdapter(adapter_pref);
 
@@ -170,32 +168,7 @@ public class DietInfoActivity extends AppCompatActivity {
             }
 
         });
-        num_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int id, long position) {
-
-
-                switch ((int) position) {
-                    case 0:
-                        number = 4;
-                        break;
-                    case 1:
-                        number = 5;
-                        break;
-                    case 2:
-                        number = 6;
-                        break;
-
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-
-        });
         pref_list.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override

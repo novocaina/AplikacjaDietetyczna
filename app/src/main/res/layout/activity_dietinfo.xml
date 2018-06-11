@@ -139,24 +139,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
             android:gravity="center_horizontal"
-            android:text="@string/select_number"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Spinner
-            android:id="@+id/num_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="90sp"
-            android:layout_marginRight="90sp"
-            android:backgroundTint="@android:color/black" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
-            android:gravity="center_horizontal"
             android:text="@string/prefer"
             android:textColor="@android:color/black"
             android:textSize="20sp"

@@ -16,9 +16,9 @@ import butterknife.OnClick;
 
 public class cpmActivity extends AppCompatActivity {
     @BindView(R.id.weightcpm_txt)
-    EditText weightcpm_txt;
+    EditText weightCPM_txt;
     @BindView(R.id.heightcpm_txt)
-    EditText heightcpm_txt;
+    EditText heightCPM_txt;
     @BindView(R.id.age_txt)
     EditText age_txt;
     @BindView(R.id.cpm_txt)
@@ -34,8 +34,8 @@ public class cpmActivity extends AppCompatActivity {
 
     @OnClick(R.id.cpm_btn)
     void OnClick() {
-        String weightStr = weightcpm_txt.getText().toString();
-        String heightStr = heightcpm_txt.getText().toString();
+        String weightStr = weightCPM_txt.getText().toString();
+        String heightStr = heightCPM_txt.getText().toString();
         String ageStr = age_txt.getText().toString();
 
         if (weightStr.isEmpty() || heightStr.isEmpty() || ageStr.isEmpty()) {

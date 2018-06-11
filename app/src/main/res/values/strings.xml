@@ -42,17 +42,12 @@
     <string name="success">Dane zostały poprawnie zapisane</string>
     <string name="warning_dietplan">Problem z odczytem danych</string>
     <string name="food_list">Lista zakupów</string>
-    <string name="food_item">Dodaj do listy</string>
-    <string name="see_list">Zobacz listę</string>
+    <string name="add_food_item">Dodaj do listy</string>
+    <string name="add_new_title">Dodaj kolejne produkty </string>
     <string name="give_name">Wpisz nazwę</string>
-    <string name="give_amount">Wpisz ilość</string>
-    <string name="select_property">Wybierz rodzaj ilości</string>
-    <string name="number">szt.</string>
-    <string name="gram">g</string>
-    <string name="kilogram">kg</string>
-    <string name="litr">l</string>
-    <string name="mililitr">ml</string>
-    <string name="list_error">Nie można zapisać do listy!</string>
+    <string name="add">Dodaj</string>
+    <string name="cancel">Anuluj</string>
+    <string name="add_new">Co jeszcze musisz kupić?</string>
     <string name="list_success">Poprawnie zapisano!</string>
     <string name="mon">Poniedziałek</string>
     <string name="tue">Wtorek</string>
@@ -63,5 +58,5 @@
     <string name="sun">Niedziela</string>
     <string name="open">Otwarte</string>
     <string name="close">Zamknięte</string>
-
+    <string name="delete">Usuń</string>
 </resources>
