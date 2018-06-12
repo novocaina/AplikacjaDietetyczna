@@ -5,42 +5,23 @@ package com.example.alicja.aplikacjadietetyczna;
  */
 
 public class User {
-   private double weight;
-    private double height;
-    private int age;
-    private String sex;
-    private String goal;
+    private double cpm;
 
-    public double getWeight() {
-        return weight;
+    public User(double cpm, String goal, String prefer) {
+        this.cpm = cpm;
+        this.goal = goal;
+        this.prefer = prefer;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public User() {
     }
 
-    public double getHeight() {
-        return height;
+    public double getCpm() {
+        return cpm;
     }
 
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setCpm(double cpm) {
+        this.cpm = cpm;
     }
 
     public String getGoal() {
@@ -51,14 +32,6 @@ public class User {
         this.goal = goal;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public String getPrefer() {
         return prefer;
     }
@@ -67,6 +40,20 @@ public class User {
         this.prefer = prefer;
     }
 
-    private int number;
+    private String goal;
     private String prefer;
+
+    public static final String TABLE = "user";
+    public static final String ID = "id";
+    public static final String CPM = "cpm";
+    public static final String GOAL = "goal";
+    public static final String PREFERENCE = "preference";
+    public static final String CREATE_TABLE =
+            "CREATE TABLE IF NOT EXISTS " + TABLE + " ( " +
+                    ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    CPM + " NUMBER, " +
+                    GOAL + " TEXT, " +
+                    PREFERENCE + " TEXT "
+                    + "); ";
+
 }

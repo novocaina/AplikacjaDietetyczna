@@ -59,4 +59,11 @@
     <string name="open">Otwarte</string>
     <string name="close">Zamknięte</string>
     <string name="delete">Usuń</string>
+    <string name="breakfast">śniadanie</string>
+    <string name="second_breakfast">drugie śniadanie</string>
+    <string name="dinner">obiad</string>
+    <string name="dessert">podwieczorek</string>
+    <string name="supper">kolacja</string>
+    <string name="foodmenu">twój jadłospis</string>
+    <string name="base_alert">Baza jest pusta - uzupełnij swoje dane!</string>
 </resources>

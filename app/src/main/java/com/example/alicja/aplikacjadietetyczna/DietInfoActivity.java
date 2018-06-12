@@ -32,9 +32,9 @@ public class DietInfoActivity extends AppCompatActivity {
     Spinner target_list;
     @BindView(R.id.pref_list)
     Spinner pref_list;
-
+    ListItemHelper db;
     String sex, target, preference;
-    double weight,height,cpm,pal;
+    double weight, height, cpm, pal;
     int age;
 
     @OnClick(R.id.save_btn)
@@ -54,15 +54,20 @@ public class DietInfoActivity extends AppCompatActivity {
             age = Integer.parseInt(ageStr);
             CPM newCPM = new CPM();
             cpm = (newCPM.Count_CPM(weight, height, age, sex, pal));
+            User user = new User(cpm, target, preference);
+            SaveDataInDataBase(user);
+            Toast.makeText(DietInfoActivity.this,this.getString(R.string.success),Toast.LENGTH_LONG).show();
         }
 
-        SharedPreferences prefs = getSharedPreferences("myPreferences", MODE_PRIVATE);
-        SharedPreferences.Editor prefsEdit = prefs.edit();
-        prefsEdit.putFloat("CPM", (float) cpm);
-        prefsEdit.putString("PREF", preference);
-        prefsEdit.putString("TARGET",target);
-        prefsEdit.apply();
 
+    }
+
+    public void SaveDataInDataBase(User user) {
+        if (db.getUserCount() == 0) {
+            db.insertUser(user);
+        } else {
+            db.updateUser(user);
+        }
     }
 
     @Override
@@ -70,6 +75,8 @@ public class DietInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dietinfo);
         ButterKnife.bind(this);
+        db = new ListItemHelper(this);
+
         String[] sex_table = {this.getString(R.string.woman), this.getString(R.string.man)};
         String[] act_table = {this.getString(R.string.activity_1), this.getString(R.string.activity_2),
                 this.getString(R.string.activity_3), this.getString(R.string.activity_4), this.getString(R.string.activity_5)};
