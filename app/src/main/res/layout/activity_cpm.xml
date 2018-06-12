@@ -94,6 +94,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="80sp"
             android:layout_marginRight="80sp"
+            android:textAlignment="center"
             android:backgroundTint="@android:color/black" />
 
         <TextView
@@ -113,6 +114,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10sp"
             android:layout_marginRight="10sp"
+            android:textAlignment="center"
             android:backgroundTint="@android:color/black" />
 
         <Button

@@ -211,13 +211,13 @@ public class DietPlanActivity extends AppCompatActivity {
             }
             DailyMeal meal1 = new DailyMeal(food1.getName(), Double.parseDouble(food1.getCalories()));
             db.insertMeal(meal1);
-            DailyMeal meal2 = new DailyMeal(food2.getName(), Double.parseDouble(food1.getCalories()));
+            DailyMeal meal2 = new DailyMeal(food2.getName(), Double.parseDouble(food2.getCalories()));
             db.insertMeal(meal2);
-            DailyMeal meal3 = new DailyMeal(food3.getName(), Double.parseDouble(food1.getCalories()));
+            DailyMeal meal3 = new DailyMeal(food3.getName(), Double.parseDouble(food3.getCalories()));
             db.insertMeal(meal3);
-            DailyMeal meal4 = new DailyMeal(food4.getName(), Double.parseDouble(food1.getCalories()));
+            DailyMeal meal4 = new DailyMeal(food4.getName(), Double.parseDouble(food4.getCalories()));
             db.insertMeal(meal4);
-            DailyMeal meal5 = new DailyMeal(food5.getName(), Double.parseDouble(food1.getCalories()));
+            DailyMeal meal5 = new DailyMeal(food5.getName(), Double.parseDouble(food5.getCalories()));
             db.insertMeal(meal5);
 
         }
